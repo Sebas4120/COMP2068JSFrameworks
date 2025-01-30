@@ -30,44 +30,44 @@ prompt.get([{
   }
 
   //Convert user choice to a string 
-  const userChoice = choices[result.choice]
+  const userSelection = choices[result.choice]
   
   // Log the results of the user.
 
-  console.log('User selection: ' + userChoice);
-
-
+  console.log('User selection: ' + userSelection);
 
   // Generate the computer's answer (using random function between 0 and 1)
   const randomNumber = Math.random();
-  let computerChoice;
+  let computerSelection;
 
   if (randomNumber <= 0.34){
-    computerChoice = 'Rock';
+    computerSelection = 'Rock';
   }else if (randomNumber <= 0.67){
-    computerChoice = 'Scissors';
+    computerSelection = 'Scissors';
   }else{
-    computerChoice = 'Paper';
+    computerSelection = 'Paper';
   }
 
-  console.log('Computer selection:' + computerChoice);
+  console.log('Computer selection:' + computerSelection);
 
 
   // Determine the winner using conditionals (if-else)
 
   let resultMessage = '';
 
-  if(userChoice === computerChoice){
+  if(userSelection === computerSelection){
     resultMessage = "It is a tie!"
   }else if(
-  (userChoice === 'Rock' && computerChoice === 'Scissors')||
-  (userChoice === 'Scissors' && computerChoice === 'Paper') ||
-  (userChoice === 'Paper' && computerChoice === 'Rock')
+  (userSelection === 'Rock' && computerSelection === 'Scissors')||
+  (userSelection === 'Scissors' && computerSelection === 'Paper') ||
+  (userSelection === 'Paper' && computerSelection === 'Rock')
   ){
     resultMessage = "User wins!!"
   }else{
     resultMessage = "Computer wins!!"
   }
+
+  //Display the results
 
   console.log(resultMessage);
 
