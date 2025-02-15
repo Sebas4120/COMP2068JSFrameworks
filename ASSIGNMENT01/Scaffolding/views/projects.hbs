@@ -1,13 +1,48 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Projects</title>
     <link rel='stylesheet' href='/stylesheets/projects.css' />   
   </head>
 
   <body>
 
-    <h1>Projects</h1>
+    <section class="portfolio">
+        {{!-- <h2>Projects</h2> --}}
+        <div class="projects-container">
+            <div class="project">
+              <a href="https://github.com/Sebas4120/PythonPDFExtractor" target="_blank">
+                <img src="/images/pythonPdf.jpg">
+                <div class="project-info">
+                    <h3>Python PDF Extractor</h3>
+                    <p>The aim of this project was to automate manual and routine processes. This program consisted of creating a new pdf document based on individual pages and/or page ranges from another source PDF document.</p>
+                </div>
+              </a>  
+            </div>
 
-  </body>
+            <div class="project">
+              <a href="https://github.com/Sebas4120/Black_Jack" target="_blank">
+                <img src="/images/blackJack.jpg">
+                <div class="project-info">
+                    <h3>Black Jack</h3>
+                    <p>This is a casino game called Blackjack built using PHP</p>
+                </div>
+              </a>
+            </div>
 
+            <div class="project">
+              <href="https://github.com/Sebas4120/SQL-tasks" target="_blank">
+                <img src="/images/mySql.jpg">
+                <div class="project-info">
+                    <h3>SQL projects</h3>
+                    <p>This repository has 4 projects elaborated during my Relational database class in which we covered topics such as ERD design, primary and foreign keys, data manipulation, ACID properties, normalization, and advanced techniques.</p>
+                </div>
+              </a>
+            </div>
+        </div>
+    </section>
+
+</body>
 </html>

@@ -28,14 +28,14 @@
 }
 
 .hero-content h1 {
-  font-size: 3rem;
+  font-size: 56px;
   font-weight: bold;
   text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
   
 }
 
 .hero-content p {
-  font-size: 1.5rem;
+  font-size: 1.7rem;
   text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
 }
 
@@ -52,3 +52,42 @@
   }
 }
 
+
+/* Main container to align text and image */
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 80%;
+  margin: auto;
+  background-color: rgb(255, 255, 255);
+  /* border: red solid; */
+}
+
+
+
+/* Text section */
+.text {
+  flex: 1;
+  padding-right: 40px;
+  
+  /* border:red solid; */
+}
+
+.text h1{
+  margin-bottom: 20px;
+  font-size: 50px;
+  border-bottom: 4px solid rgb(33, 121, 176);
+}
+
+.text p{
+  font-size: 18px;
+  text-align: justify;
+}
+
+/* Image section */
+img {
+  max-width: 550px;
+  height: auto;
+  box-shadow: 5px 5px 15px rgba(0, 0, 85, 0.2);
+}
