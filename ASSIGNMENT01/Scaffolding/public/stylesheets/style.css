@@ -1,4 +1,4 @@
-
+/* General Styling for Hero Section (Navbar + Header) */
 .hero {
   position: relative;
   width: 100%;
@@ -9,53 +9,68 @@
   align-items: center;
 }
 
-/* Navbar */
+/* Navbar Styling */
 .navbar {
   position: absolute;
   top: 0;
-  left: 0;
+  right: 0;
   width: 100%;
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.3); /* Semi-transparent background */
   padding: 15px 0;
+  display: flex;
+  justify-content: flex-end;
 }
 
+/* Navbar List Item Spacing */
+.navbar li {
+  padding-right: 25px;
+}
+
+/* Navbar Expand Styling (for larger screens) */
+.navbar-expand-lg .navbar-collapse {
+  display: flex;
+  flex-basis: auto;
+  justify-content: flex-end;
+  padding-right: 30px;
+}
+
+/* Hero Content Section Styling */
 .hero-content {
   text-align: center;
   margin-top: 100px;
   color: rgb(255, 255, 255);
 }
 
-
+/* Main Heading in Hero Section */
 .hero-content h1 {
   font-size: 56px;
   font-weight: bold;
-  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
-  
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5); 
 }
 
+/* Paragraph Text in Hero Section */
 .hero-content p {
   font-size: 1.7rem;
-  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5); 
 }
 
-/* 🔹 Responsive Design */
+/* Responsive Design for Smaller Screens (max-width 768px) */
 @media (max-width: 768px) {
   .hero {
       height: 60vh;
   }
   .hero-content h1 {
-      font-size: 2rem;
+      font-size: 2rem; 
   }
   .hero-content p {
       font-size: 1.2rem;
   }
 }
 
-/* Footer */
-
+/* Footer Styling */
 footer {
-  background-color: #212121;
-  color: #ffffff;
+  background-color: #212121; 
+  color: rgb(255, 255, 255);
   text-align: center;
   padding: 20px;
   font-size: 16px;
@@ -64,21 +79,24 @@ footer {
   margin-top: 50px;
 }
 
+/* Footer Link Styling */
 footer a {
-  color: #f97611;
+  color: #f97611; 
   text-decoration: none;
   margin: 0 10px;
   font-size: 24px; 
   transition: color 0.3s ease-in-out;
 }
 
+/* Footer Link Hover Effect */
 footer a:hover {
-  color: #ffffff;
+  color: rgb(255, 255, 255);
 }
 
+/* Responsive Footer Styling for Extra Small Screens (max-width 600px) */
 @media (max-width: 600px) {
   footer {
-      font-size: 14px;
+      font-size: 14px; 
       padding: 15px;
   }
 }

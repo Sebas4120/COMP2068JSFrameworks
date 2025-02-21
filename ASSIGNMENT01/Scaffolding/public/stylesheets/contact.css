@@ -1,8 +1,9 @@
-/* 🔹 Hero Section (Navbar + Header) */
+/* Hero Section (Navbar + Header) */
 .hero {
-  background: url('/images/teton3.jpg') center/cover no-repeat;
+  background: url('/images/contactMe.jpg') center/cover no-repeat;
 }
 
+/* General Body Styling */
 body {
   font-family: Arial, sans-serif;
   background-color: #f4f4f9;
@@ -11,12 +12,14 @@ body {
   color: #333;
 }
 
+/* Header Styling (Main Title) */
 h1 {
   text-align: center;
   margin-top: 50px;
   font-size: 36px;
 }
 
+/* Contact Container Styling */
 .contact-container {
   max-width: 600px;
   margin: 50px auto;
@@ -26,17 +29,20 @@ h1 {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
+/* Contact Form Layout */
 .contact-form {
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
 
+/* Contact Form Label Styling */
 .contact-form label {
   font-size: 18px;
   font-weight: bold;
 }
 
+/* Contact Form Input and Textarea Styling */
 .contact-form input,
 .contact-form textarea {
   padding: 12px;
@@ -46,12 +52,14 @@ h1 {
   margin-top: 5px;
 }
 
+/* Input and Textarea Focus Effect */
 .contact-form input:focus,
 .contact-form textarea:focus {
   border-color: #f27c0d;
   outline: none;
 }
 
+/* Contact Form Button Styling */
 .contact-form button {
   padding: 12px;
   font-size: 18px;
@@ -63,6 +71,7 @@ h1 {
   transition: background 0.3s;
 }
 
+/* Button Hover Effect */
 .contact-form button:hover {
   background: #eebe20;
 }
