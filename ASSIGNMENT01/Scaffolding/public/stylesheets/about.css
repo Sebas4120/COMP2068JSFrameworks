@@ -1,60 +1,36 @@
-/* 🔹 Hero Section (Navbar + Header) */
+/* Hero Section (Navbar + Header) */
 .hero {
-  position: relative;
-  width: 100%;
-  height: 80vh; /* Adjust height as needed */
   background: url('/images/code.jpg') center/cover no-repeat;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 
-/* 🔹 Navbar (Transparent on Hero Section) */
-.navbar {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background: rgba(0, 0, 0, 0); /* Semi-transparent effect */
-  padding: 15px 0;
-}
 
-/* 🔹 Hero Content (Title & Subtitle) */
-.hero-content {
+.container h1 {
+  margin-bottom: 40px;
   text-align: center;
-  margin-top: 100px;
-  color: rgb(255, 255, 255);
-}
-
-.hero-content h1 {
-  font-size: 3rem;
+  display: inline-block;
+  font-size:  40px;
   font-weight: bold;
-  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
-  
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #333;
+  position: relative;
+  padding-bottom: 10px;
 }
 
-.hero-content p {
-  font-size: 1.5rem;
-  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
-}
-
-/* 🔹 Responsive Design */
-@media (max-width: 768px) {
-  .hero {
-      height: 60vh;
-  }
-  .hero-content h1 {
-      font-size: 2rem;
-  }
-  .hero-content p {
-      font-size: 1.2rem;
-  }
+.container h1::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 60%;
+  height: 6px;
+  background: linear-gradient(to right, #ff8c00, #ff4500); 
+  border-radius: 4px;
+  transform: translateX(-50%);
 }
 
 .container {
-  /* width: 80%;
-  max-width: 1000px; */
+  text-align: center;
   margin: 0 auto;
   padding: 20px;
 }
@@ -68,43 +44,40 @@
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
+  
 }
 
 /* Text Content */
 .text-content {
   flex: 1;
-  min-width: 250px; /* Asegura que el texto no se haga demasiado pequeño */
+  min-width: 250px;
+  text-align: justify;
+  margin:10px;
+  color: #444;
 }
 
 h2 {
-  margin-top: 0; /* Evita espacio extra */
+  margin-top: 0;
   color: #333;
-  font-size: 1.8em;
+  font-size: 28px;
   text-align: left;
   border-bottom:4px solid rgb(33, 121, 176);
 }
 
-/* Paragraph and List */
-p {
-  font-size: 1.1em;
-  line-height: 1.6;
-}
-
-ul {
-  padding-left: 20px;
-}
-
-li {
-  font-size: 1.1em;
-  margin-bottom: 5px;
+h3{
+  font-size: 25px;
+  margin: 0;
+  padding: 0;
+  font-style: italic;
+  
 }
 
 .image-container {
   display: flex;
-  flex-direction: column; /* Apila las imágenes una sobre otra */
-  gap: 10px; /* Espacio entre imágenes */
-  margin-left: 20px; /* Espacio entre texto e imágenes */
+  flex-direction: column;
+  gap: 10px;
+  margin: 20px;
+  justify-content: space-around;
 }
 
 /* Image Styles */
@@ -117,3 +90,82 @@ li {
 }
 
 
+.list-container {
+  margin-top: 10px;
+  display: flex;
+  align-items: flex-start; 
+  gap: 20px;
+  color: #444;
+}
+
+
+.experience-image {
+  width: 300px; 
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+.list-container ul {
+  flex: 1;
+  padding-left: 20px;
+  list-style-type: disc;
+}
+
+
+.list-container li {
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+
+.skills-section {
+  text-align: center;
+}
+
+.skills-section h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 30px;
+  color: #222;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.skills-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+.skill-category {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.skill-category h3 {
+  font-size: 1.5rem;
+  color: #ff4500;
+  margin-bottom: 10px;
+}
+
+.skill-category p {
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.5;
+}
+.empty {
+  visibility: hidden;
+}
+
+.skill-category:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}

@@ -4,7 +4,7 @@ var router = express.Router();
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'My Portfolio', headerTitle: 'Hey!, I\'m Sebastian Aguirre',
-    headerDescription: 'Discover my work and projects.'});
+    headerDescription: 'Discover my background, work and projects.'});
 });
 
 router.get('/about', function(req, res, next) {
