@@ -1,6 +1,17 @@
 /* Hero Section (Navbar + Header) */
 .hero {
   background: url('/images/code.jpg') center/cover no-repeat;
+  opacity: 0;
+  animation: fadeInBackground 2s ease-in-out forwards;
+}
+
+@keyframes fadeInBackground {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
 }
 
 /* Main Title Styling within Container */

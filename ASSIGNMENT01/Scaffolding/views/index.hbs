@@ -1,26 +1,52 @@
-<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-    <link rel='stylesheet' href='/stylesheets/index.css' />   
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <link rel="stylesheet" href="/stylesheets/index.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"
+    ></script>
   </head>
 
   <body>
-  <div class="container">
-    {{!-- About me section --}}
-    <div class="text">
-      <h1>Nice to meet you!</h1>
-      <p>My name is Sebastian Helmuth Aguirre Manrique. I have a bachelor's degree in Industrial Engineering from Universidad de Lima and I am currently in my last semester of my postgraduate studies in Computer Programming at Georgian College with a cumulative GPA of 91. ✍🏻</p>
+    <div class="container">
+      {{! About me section }}
+      <div class="text">
+        <h1>Nice to meet you!</h1>
+        <p>My name is Sebastian Helmuth Aguirre Manrique. I have a bachelor's
+          degree in Industrial Engineering from Universidad de Lima and I am
+          currently in my last semester of my postgraduate studies in Computer
+          Programming at Georgian College with a cumulative GPA of 91. ✍🏻</p>
 
-      <p>
-      My work experience during and after leaving university allowed me to find my passion for programming and business and data analytics. I live in Barrie, Ontario in Canada where I gained my last work experience as a Data Analyst & Technician at York Region. Currently, I am dedicated to improving my analytical skills and looking for a permanent position as a data or business analyst.📈
-      </p>
+        <p>
+          My work experience during and after leaving university allowed me to
+          find my passion for computer programming , and business & data analytics. I
+          live in Barrie, Ontario in Canada where I gained my last work
+          experience as a Data Analyst & Technician at York Region.</p>
+        
+        <p>
+          I'm currently focused on enhancing my web and software development skills, as well as strengthening my data and business analytical abilities. I am seeking a permanent position after graduation where I can apply my expertise and continue growing professionally.📈
+        </p>
+        
+      </div>
+
+      <img
+        src="/images/sebas_photo.jpg"
+        alt="Graduation day!"
+        data-aos="fade-up"
+        data-aos-duration="1500"
+      />
     </div>
-    
-    <img src="/images/sebas_photo.jpg" alt="Graduation day!" />
-  </div>
-</body>
+
+    <script>
+      AOS.init();
+    </script>
+  </body>
 
 </html>
