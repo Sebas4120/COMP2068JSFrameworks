@@ -31,8 +31,8 @@ body {
   font-size: 18px;
 }
 
-.navbar a:hover {
-  text-decoration: underline;
+.navbar-nav a:hover {
+  background-color: #285ef4;
 }
 
 /* Buttons */
