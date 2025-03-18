@@ -12,5 +12,9 @@ const configurations = {
       CallbackUrl: process.env.GITHUB_CALLBACK_URL
     },
   },
+  Session: {
+    sessionSecret: process.env.SESSION_SECRET,  // Secreto para las sesiones
+  },
+  
 };
 module.exports = configurations;

@@ -10,7 +10,7 @@ var coursesRouter = require("./routes/courses");
 // var usersRouter = require('./routes/users');
 // Import MongoDB and Configuration modules
 var mongoose = require("mongoose");
-var configs = require("./configs/globals");
+var configurations = require("./configs/globals");
 // HBS Helper Methods
 var hbs = require("hbs");
 // Import passport and session modules
@@ -22,6 +22,26 @@ var User = require('./models/user');
 var githubStrategy = require("passport-github2").Strategy;
 // Express App Object
 var app = express();
+
+// Session middleware (Add this before Passport.js)
+app.use(session({
+  secret: configurations.Session.sessionSecret,
+  resave: false,
+  saveUninitialized: true
+}));
+
+// Passport session middleware
+app.use(passport.initialize());
+app.use(passport.session());
+
+// GitHub login route
+app.get("/auth/github", passport.authenticate("github"));
+
+// GitHub callback route (the redirect URI you set in GitHub)
+app.get("/auth/github/callback", passport.authenticate("github", {
+  successRedirect: "/projects", // Redirect to projects  after successful login
+  failureRedirect: "/login" // Redirect to login page if authentication fails
+}));
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
@@ -47,9 +67,9 @@ passport.use(User.createStrategy());
 passport.use(new githubStrategy(
   // options object
   {
-    clientID: configs.Authentication.GitHub.ClientId,
-    clientSecret: configs.Authentication.GitHub.ClientSecret,
-    callbackURL: configs.Authentication.GitHub.CallbackURL
+    clientID: configurations.Authentication.GitHub.ClientId,
+    clientSecret: configurations.Authentication.GitHub.ClientSecret,
+    callbackURL: configurations.Authentication.GitHub.CallbackURL
   },
   // callback function
   // profile is github profile
@@ -86,7 +106,7 @@ app.use('/courses', coursesRouter);
 // app.use('/users', usersRouter);
 // Connecting to the DB
 mongoose
-  .connect(configs.ConnectionStrings.MongoDB, {
+  .connect(configurations.ConnectionStrings.MongoDB, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
