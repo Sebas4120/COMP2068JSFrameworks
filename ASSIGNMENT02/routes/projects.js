@@ -8,17 +8,7 @@ const Course = require("../models/course");
 // Moved middleware function to extensions/authentication.js to make it reusable across different routers
 const AuthenticationMiddleware = require("../extensions/authentication");
 // Custom Middleware function to check for an authenticated user
-// function AuthenticationMiddleware(req, res, next) {
-//     if (req.isAuthenticated()) { // returns true if the session was started
-//         return next(); // calls the next middleware in the stack
-//     }
-//     else {
-//         // user not authenticated
-//         res.redirect("/login");
-//     }
-// }
-// Configure GET/POST handlers
-// Path relative to the one configured in app.js > /projects
+
 // GET /projects/
 router.get("/", async (req, res, next) => {
   // retrieve ALL data, and sort by dueDate

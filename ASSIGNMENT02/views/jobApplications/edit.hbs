@@ -1,0 +1,38 @@
+<h1>Edit Job Application</h1>
+{{!-- Only show the form if there's a job application to edit --}}
+{{#if jobApplication}}
+  <form action="/jobApplications/edit/{{jobApplication._id}}" method="POST">
+    <div class="form-group">
+      <label for="companyName">Company</label>
+      <input type="text" id="companyName" name="companyName" class="form-control" value="{{jobApplication.companyName}}" required />
+    </div>
+
+    <div class="form-group">
+      <label for="jobTitle">Job Title</label>
+      <input type="text" id="jobTitle" name="jobTitle" class="form-control" value="{{jobApplication.jobTitle}}" required />
+    </div>
+
+    <div class="form-group">
+      <label for="appliedDate">Applied Date</label>
+      <input type="date" id="appliedDate" name="appliedDate" class="form-control" value="{{toShortDate jobApplication.appliedDate}}" required />
+    </div>
+
+    <div class="form-group">
+      <label for="status">Status</label>
+      <select id="status" name="status" class="form-control">
+        <option value="Applied" {{#if (eq jobApplication.status "Applied")}}selected{{/if}}>Applied</option>
+        <option value="Interview Scheduled" {{#if (eq jobApplication.status "Interview Scheduled")}}selected{{/if}}>Interview Scheduled</option>
+        <option value="Offer Received" {{#if (eq jobApplication.status "Offer Received")}}selected{{/if}}>Offer Received</option>
+        <option value="Rejected" {{#if (eq jobApplication.status "Rejected")}}selected{{/if}}>Rejected</option>
+      </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Update Job Application</button>
+  </form>
+
+  <br>
+  <a href="/jobApplications" class="btn btn-secondary">Back to Job Applications</a>
+
+{{else}}
+  <p>Job application not found.</p>
+{{/if}}

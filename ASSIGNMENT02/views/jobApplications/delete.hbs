@@ -1,0 +1,13 @@
+<h1>Delete Job Application</h1>
+{{!-- Only show the confirmation if there's a job application to delete --}}
+{{#if jobApplication}}
+  <p>Are you sure you want to delete the job application for "{{jobApplication.jobTitle}}" at "{{jobApplication.companyName}}"?</p>
+
+  <form action="/jobApplications/delete/{{jobApplication._id}}" method="POST">
+    <button type="submit" class="btn btn-danger">Yes, Delete</button>
+    <a href="/jobApplications" class="btn btn-secondary">Cancel</a>
+  </form>
+
+{{else}}
+  <p>Job application not found.</p>
+{{/if}}
