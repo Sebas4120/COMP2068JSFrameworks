@@ -2,13 +2,14 @@
 //Schema enforcement is done at the application level
 //This file defines the schema for the project model
 
+
 // Naming convention for models: use singular form of the represented entity
 
 // Import mongoose
 const mongoose = require("mongoose");
 // Define data schema (JSON)
 const dataSchemaObj = {
-  position: { type: String, required: true },
+  name: { type: String, required: true },
   dueDate: { type: Date },
   course: { type: String, required: true },
   status: { type: String, default: "TO DO" },

@@ -1,4 +1,5 @@
 {{! Global View Template in HBS format }}
+
 <html>
   <head>
     <title>{{title}}</title>
@@ -12,7 +13,11 @@
     />
   </head>
   <body>
-
+    {{! Jumbotron Header }}
+    <div class="mt-4 p-5 bg-primary text-white rounded">
+      <h1>Project Tracker</h1>
+      <p>Track all your projects!</p>
+    </div>
     {{! Navbar }}
     <!-- Grey with black text -->
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
@@ -47,13 +52,6 @@
         </ul>
       </div>
     </nav>
-
-    {{! Jumbotron Header }}
-    <div class="mainTitle">
-      <h1>Job Applications Manager</h1>
-      <p>Secure your next job!</p>
-    </div>
-    
     {{! renders content from an individual view file }}
     {{{body}}}
     {{! Bootstrap JS }}

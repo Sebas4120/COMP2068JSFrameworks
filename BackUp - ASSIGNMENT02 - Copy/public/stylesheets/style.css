@@ -32,7 +32,7 @@ body {
 }
 
 .navbar-nav a:hover {
-  background-color: #2ec579;
+  background-color: #285ef4;
 }
 
 /* Buttons */
@@ -46,10 +46,4 @@ button {
 
 button:hover {
   background-color: #27ae60;
-}
-
-
-.mainTitle{
-  background-color: #285ef4;
-  color: #c9e0f7;
 }
