@@ -21,11 +21,14 @@
           <li class="nav-item">
             <a class="nav-link active" href="/">Home</a>
           </li>
-          <li class="nav-item">
+          {{!-- <li class="nav-item">
             <a class="nav-link" href="/Projects">Projects</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/Courses">Courses</a>
+          </li> --}}
+          <li class="nav-item">
+            <a class="nav-link" href="/JobApplications">Job Application</a>
           </li>
         </ul>
         <ul class="navbar-nav ml-auto">
@@ -48,12 +51,12 @@
       </div>
     </nav>
 
-    {{! Jumbotron Header }}
+    {{!-- {{! Jumbotron Header }}
     <div class="mainTitle">
       <h1>Job Applications Manager</h1>
       <p>Secure your next job!</p>
-    </div>
-    
+    </div> --}}
+
     {{! renders content from an individual view file }}
     {{{body}}}
     {{! Bootstrap JS }}
@@ -62,9 +65,7 @@
       integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
       crossorigin="anonymous"
     ></script>
-    {{!-- no need to reference /public/* --}}
-    <script src="/javascripts/scripts.js"></script>
+    {{! no need to reference /public/* }}
+    
   </body>
 </html>
-
-

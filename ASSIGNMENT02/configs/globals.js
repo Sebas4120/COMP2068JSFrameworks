@@ -13,7 +13,7 @@ const configurations = {
     },
   },
   Session: {
-    sessionSecret: process.env.SESSION_SECRET,  // Secreto para las sesiones
+    sessionSecret: process.env.SESSION_SECRET,
   },
   
 };

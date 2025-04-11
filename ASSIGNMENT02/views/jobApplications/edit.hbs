@@ -1,38 +1,43 @@
 <h1>Edit Job Application</h1>
-{{!-- Only show the form if there's a job application to edit --}}
+
 {{#if jobApplication}}
   <form action="/jobApplications/edit/{{jobApplication._id}}" method="POST">
-    <div class="form-group">
-      <label for="companyName">Company</label>
-      <input type="text" id="companyName" name="companyName" class="form-control" value="{{jobApplication.companyName}}" required />
+    <div class="mb-3">
+      <label for="companyName" class="form-label">Company Name:</label>
+      <input type="text" id="companyName" name="companyName" class="form-control" value="{{jobApplication.companyName}}" required>
     </div>
 
-    <div class="form-group">
-      <label for="jobTitle">Job Title</label>
-      <input type="text" id="jobTitle" name="jobTitle" class="form-control" value="{{jobApplication.jobTitle}}" required />
+    <div class="mb-3">
+      <label for="jobTitle" class="form-label">Job Title:</label>
+      <input type="text" id="jobTitle" name="jobTitle" class="form-control" value="{{jobApplication.jobTitle}}" required>
     </div>
 
-    <div class="form-group">
-      <label for="appliedDate">Applied Date</label>
-      <input type="date" id="appliedDate" name="appliedDate" class="form-control" value="{{toShortDate jobApplication.appliedDate}}" required />
-    </div>
-
-    <div class="form-group">
-      <label for="status">Status</label>
-      <select id="status" name="status" class="form-control">
+    <div class="mb-3">
+      <label for="status" class="form-label">Status:</label>
+      <select id="status" name="status" class="form-control" required>
         <option value="Applied" {{#if (eq jobApplication.status "Applied")}}selected{{/if}}>Applied</option>
-        <option value="Interview Scheduled" {{#if (eq jobApplication.status "Interview Scheduled")}}selected{{/if}}>Interview Scheduled</option>
-        <option value="Offer Received" {{#if (eq jobApplication.status "Offer Received")}}selected{{/if}}>Offer Received</option>
+        <option value="Interview" {{#if (eq jobApplication.status "Interview")}}selected{{/if}}>Interview</option>
+        <option value="Offer" {{#if (eq jobApplication.status "Offer")}}selected{{/if}}>Offer</option>
         <option value="Rejected" {{#if (eq jobApplication.status "Rejected")}}selected{{/if}}>Rejected</option>
       </select>
     </div>
 
-    <button type="submit" class="btn btn-primary">Update Job Application</button>
-  </form>
+    <div class="mb-3">
+      <label for="notes" class="form-label">Notes:</label>
+      <textarea id="notes" name="notes" class="form-control" rows="10">{{jobApplication.notes}}</textarea>
+    </div>
 
-  <br>
-  <a href="/jobApplications" class="btn btn-secondary">Back to Job Applications</a>
+    <button type="submit" class="btn btn-primary">Save Changes</button>
+    <a href="/jobApplications" class="btn btn-secondary">Cancel</a>
+  </form>
 
 {{else}}
   <p>Job application not found.</p>
 {{/if}}
+
+{{!-- Helper function to compare values --}}
+{{!-- <script>
+  Handlebars.registerHelper("eq", function(a, b) {
+    return a === b;
+  });
+</script> --}}

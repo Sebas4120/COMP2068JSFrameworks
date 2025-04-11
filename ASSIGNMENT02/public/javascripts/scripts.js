@@ -1,5 +1,5 @@
 // collection of frontend JS functions
 // Delete Confirmation
-function confirmDeletion() {
+function confirmDeletion1() {
   return confirm("Are you sure?");
 }

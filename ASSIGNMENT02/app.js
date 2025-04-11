@@ -7,7 +7,11 @@ var logger = require("morgan");
 var indexRouter = require("./routes/index");
 var projectsRouter = require("./routes/projects");
 var coursesRouter = require("./routes/courses");
+// Import the jobApplications routes
+var jobApplicationsRouter = require("./routes/jobApplications");
 // var usersRouter = require('./routes/users');
+
+
 
 // Import MongoDB and Configuration modules
 var mongoose = require("mongoose");
@@ -42,7 +46,7 @@ app.get("/auth/github", passport.authenticate("github"));
 
 // GitHub callback route (the redirect URI you set in GitHub)
 app.get("/auth/github/callback", passport.authenticate("github", {
-  successRedirect: "/projects", // Redirect to projects  after successful login
+  successRedirect: "/jobApplications", // Redirect to projects  after successful login
   failureRedirect: "/login" // Redirect to login page if authentication fails
 }));
 
@@ -107,7 +111,10 @@ passport.deserializeUser(User.deserializeUser());
 app.use("/", indexRouter);
 app.use("/projects", projectsRouter);
 app.use('/courses', coursesRouter);
+app.use("/jobApplications", jobApplicationsRouter);
 // app.use('/users', usersRouter);
+
+
 
 
 // Connecting to the DB
@@ -120,6 +127,11 @@ mongoose.connect(configurations.ConnectionStrings.MongoDB, {
 // Sub-Expressions https://handlebarsjs.com/guide/builtin-helpers.html#sub-expressions
 // function name and helper function with parameters
 
+
+// Register 'eq' helper for comparing two values
+hbs.registerHelper("eq", (a, b) => a === b);
+
+// Register helper to create an option element
 hbs.registerHelper("createOptionElement", (currentValue, selectedValue) => {
   console.log(currentValue + " " + selectedValue);
   // initialize selected property

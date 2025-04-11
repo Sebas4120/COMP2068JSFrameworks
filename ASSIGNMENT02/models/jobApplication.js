@@ -9,7 +9,8 @@ const jobApplicationSchema = mongoose.Schema({
     enum: ["Applied", "Interview Scheduled", "Offer Received", "Rejected"], 
     default: "Applied" 
   }, // Status of the application
-  notes: { type: String }  // Additional notes for the job application
+  notes: { type: String },  // Additional notes for the job application
+  user: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
 });
 
 module.exports = mongoose.model("JobApplication", jobApplicationSchema);
