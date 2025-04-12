@@ -72,6 +72,10 @@ app.use(passport.session());
 // Link passport to the user model
 passport.use(User.createStrategy());
 // configure github strategy
+console.log("GitHub Client ID:", process.env.GITHUB_CLIENT_ID);
+console.log("GitHub Secret:", process.env.GITHUB_CLIENT_SECRET);
+console.log("GitHub Callback URL:", process.env.GITHUB_CALLBACK_URL);
+
 passport.use(new githubStrategy(
   // options object
   {
