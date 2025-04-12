@@ -5,8 +5,8 @@ var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 // Router Objects
 var indexRouter = require("./routes/index");
-var projectsRouter = require("./routes/projects");
-var coursesRouter = require("./routes/courses");
+// var projectsRouter = require("./routes/projects");
+// var coursesRouter = require("./routes/courses");
 // Import the jobApplications routes
 var jobApplicationsRouter = require("./routes/jobApplications");
 // var usersRouter = require('./routes/users');
@@ -109,8 +109,8 @@ passport.deserializeUser(User.deserializeUser());
 
 // Routing Configuration
 app.use("/", indexRouter);
-app.use("/projects", projectsRouter);
-app.use('/courses', coursesRouter);
+// app.use("/projects", projectsRouter);
+// app.use('/courses', coursesRouter);
 app.use("/jobApplications", jobApplicationsRouter);
 // app.use('/users', usersRouter);
 

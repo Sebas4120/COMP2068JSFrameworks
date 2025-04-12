@@ -1,75 +1,89 @@
-<h1>{{title}}</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{title}}</title>
+  
+</head>
+<body>
+  <div class="jobApps"></div>
+    <h1>{{title}}</h1>
 
-{{!-- Advanced Search and Filters --}}
+    {{!-- Advanced Search and Filters --}}
+    <form id="searchForm" method="POST" action="/jobApplications/search">
+      <div>
+        <label for="jobTitle">Job Title</label>
+        <input type="text" id="jobTitle" name="jobTitle" placeholder="Job Title" />
+      </div>
 
+      <div>
+        <label for="status">Application Status</label>
+        <select id="status" name="status">
+          <option value="">Select...</option>
+          <option value="Applied">Applied</option>
+          <option value="Interview Scheduled">Interview Scheduled</option>
+          <option value="Offer Received">Offer Received</option>
+          <option value="Rejected">Rejected</option>
+        </select>
+      </div>
 
-<form id="searchForm" method="POST" action="/jobApplications/search">
-  <div>
-    <label for="jobTitle">Job Title</label>
-    <input type="text" id="jobTitle" name="jobTitle" placeholder="Job Title" />
-  </div>
+      <div>
+        <label for="datePosted">Date Posted</label>
+        <select id="datePosted" name="datePosted">
+          <option value="">Select...</option>
+          <option value="7-days">Last 7 Days</option>
+          <option value="30-days">Last 30 Days</option>
+          <option value="this-month">This Month</option>
+        </select>
+      </div>
 
-  <div>
-    <label for="status">Application Status</label>
-    <select id="status" name="status">
-      <option value="">Select...</option>
-      <option value="Applied">Applied</option>
-      <option value="Interview Scheduled">Interview Scheduled</option>
-      <option value="Offer Received">Offer Received</option>
-      <option value="Rejected">Rejected</option>
-    </select>
-  </div>
+      <button type="submit" class="btn btn-primary">Search</button>
+    </form>
 
-  <div>
-    <label for="datePosted">Date Posted</label>
-    <select id="datePosted" name="datePosted">
-      <option value="">Select...</option>
-      <option value="7-days">Last 7 Days</option>
-      <option value="30-days">Last 30 Days</option>
-      <option value="this-month">This Month</option>
-    </select>
-  </div>
+    {{!-- CRUD Functionality --}}
+    {{!-- CREATE button --}}
+    {{#if user}}
 
-  <button type="submit" class="btn btn-primary">Search</button>
-</form>
+  
+      <div class="btn-group">
+        <a href="/jobApplications/add" class="btn btn-success">Add a new job application</a>
+      </div>
 
-{{!-- CRUD Functionality --}}
-{{!-- CREATE button --}}
-{{! Only show CRUD buttons if there's a session (authenticated user) }}
-{{#if user}}
-  <a href="/jobApplications/add" class="btn btn-success">Add a new job application</a>
-
-
-{{!-- READ Show Table to view all job applications in the db --}}
-<table class="table">
-    <thead>
-        <tr>
+      {{!-- READ Show Table to view all job applications in the db --}}
+      <table class="table">
+        <thead>
+          <tr>
             <th>Company</th>
             <th>Job Title</th>
             <th>Applied Date</th>
             <th>Status</th>
             <th>Actions</th>
-        </tr>
-    </thead>
-    <tbody>
-        {{!-- Retrieve all job applications and loop --}}
-        {{#each dataset}}
-        <tr>
-            <td>{{this.companyName}}</td>
-            <td>{{this.jobTitle}}</td>
-            {{!-- Use the hbs helper function to format the date accordingly --}}
-            <td>{{toShortDate this.appliedDate}}</td>
-            <td>{{this.status}}</td>
-            {{!-- UPDATE and DELETE buttons --}}
-            <td>
-                {{! Only show CRUD buttons if there's a session (authenticated user) }}
+          </tr>
+        </thead>
+        <tbody>
+          {{!-- Retrieve all job applications and loop --}}
+          {{#each dataset}}
+            <tr>
+              <td>{{this.companyName}}</td>
+              <td>{{this.jobTitle}}</td>
+              {{!-- Use the hbs helper function to format the date accordingly --}}
+              <td>{{toShortDate this.appliedDate}}</td>
+              <td>{{this.status}}</td>
+              {{!-- UPDATE and DELETE buttons --}}
+              <td>
                 {{#if ../user}}
-                    <a href="/jobApplications/edit/{{this._id}}" class="btn btn-primary">Edit</a>
-                    <a href="/jobApplications/delete/{{this._id}}" onclick="return confirmDeletion()" class="btn btn-danger">Delete</a>
+                  <a href="/jobApplications/edit/{{this._id}}" class="btn btn-primary">Edit</a>
+                  <a href="/jobApplications/delete/{{this._id}}" onclick="return confirmDeletion()" class="btn btn-danger">Delete</a>
                 {{/if}}
-        </tr>
-        {{/each}}
-    </tbody>
-</table>
-{{/if}}
+              </td>
+            </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    {{/if}}
+  </div>
+
+</body>
+</html>
 
