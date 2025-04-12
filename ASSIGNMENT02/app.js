@@ -10,7 +10,7 @@ var indexRouter = require("./routes/index");
 // Import the jobApplications routes
 var jobApplicationsRouter = require("./routes/jobApplications");
 // var usersRouter = require('./routes/users');
-
+require('dotenv').config();
 
 
 // Import MongoDB and Configuration modules
@@ -74,9 +74,9 @@ passport.use(User.createStrategy());
 passport.use(new githubStrategy(
   // options object
   {
-    clientID: configurations.Authentication.GitHub.ClientId,
-    clientSecret: configurations.Authentication.GitHub.ClientSecret,
-    callbackURL: configurations.Authentication.GitHub.CallbackURL
+    clientID: process.env.GITHUB_CLIENT_ID,
+    clientSecret: process.env.GITHUB_CLIENT_SECRET,
+    callbackURL: process.env.GITHUB_CALLBACK_URL
   },
   // callback function
   // profile is github profile
