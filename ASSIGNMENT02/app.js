@@ -1,3 +1,4 @@
+require('dotenv').config();
 var createError = require("http-errors");
 var express = require("express");
 var path = require("path");
@@ -10,7 +11,7 @@ var indexRouter = require("./routes/index");
 // Import the jobApplications routes
 var jobApplicationsRouter = require("./routes/jobApplications");
 // var usersRouter = require('./routes/users');
-require('dotenv').config();
+
 
 
 // Import MongoDB and Configuration modules
