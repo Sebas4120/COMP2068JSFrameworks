@@ -1,6 +1,6 @@
 # COMP2068 - JavaScript Frameworks
 
-This repository contains all lessons, exercises, and projects completed during the **COMP2068 JavaScript Frameworks** course.
+This repository contains all lessons, exercises, and projects completed during my **COMP2068 JavaScript Frameworks** course.
 
 ## Course Overview
 
