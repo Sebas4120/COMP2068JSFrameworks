@@ -1,2 +1,2 @@
 # COMP2068JSFrameworks
- JavaScript_Frameworks_Last_Semester
+This repository is used to collect all my lesson of the couse JavaScript Frameworks
